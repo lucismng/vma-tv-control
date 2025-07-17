@@ -1,13 +1,16 @@
 import React from 'react';
 import videojs from 'video.js';
 
+// Suy ra (infer) kiểu Player từ giá trị trả về của hàm videojs để đảm bảo type chính xác.
+type VideoJsPlayer = ReturnType<typeof videojs>;
+
 interface MediaPlayerProps {
   streamUrl: string;
 }
 
 export const MediaPlayer: React.FC<MediaPlayerProps> = ({ streamUrl }) => {
   const videoRef = React.useRef<HTMLDivElement>(null);
-  const playerRef = React.useRef<videojs.Player | null>(null);
+  const playerRef = React.useRef<VideoJsPlayer | null>(null);
 
   React.useEffect(() => {
     // Chỉ khởi tạo player một lần
