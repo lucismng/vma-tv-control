@@ -1,0 +1,7 @@
+
+{
+  "name": "VMA TV Control",
+  "description": "Một ứng dụng web để quản lý, kiểm tra và tổ chức các link stream của kênh truyền hình. Hỗ trợ thêm logo, phân nhóm, quản lý lịch phát sóng và xuất/nhập file M3U.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
