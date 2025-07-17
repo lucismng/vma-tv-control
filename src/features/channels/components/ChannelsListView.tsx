@@ -1,5 +1,5 @@
 import React from 'react';
-import { Channel, EpgProgram, StreamDetails, StreamStatus } from '../../../types';
+import { Channel, EpgProgram, StreamStatus } from '../../../types';
 import { Icon } from '../../../components/ui/Icon';
 
 interface ChannelsListViewProps {
