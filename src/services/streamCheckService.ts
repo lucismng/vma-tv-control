@@ -23,7 +23,7 @@ export const checkStreamStatus = (url: string): Promise<{ status: StreamStatus; 
         resolve({ status: StreamStatus.OFFLINE, details: null });
       }, 8000); // 8-second timeout for the check
 
-      hls.on(Hls.Events.MANIFEST_PARSED, (_event: any, data: any) => {
+      hls.on(Hls.Events.MANIFEST_PARSED, (_, data: any) => {
         if (data.levels && data.levels.length > 0) {
           // Get the highest quality level for details
           const level = data.levels[data.levels.length - 1];
@@ -43,7 +43,7 @@ export const checkStreamStatus = (url: string): Promise<{ status: StreamStatus; 
         }
       });
 
-      hls.on(Hls.Events.ERROR, (_event: any, data: any) => {
+      hls.on(Hls.Events.ERROR, (_, data: any) => {
         if (data.fatal) {
           clearTimeout(timeout);
           hls.destroy();
