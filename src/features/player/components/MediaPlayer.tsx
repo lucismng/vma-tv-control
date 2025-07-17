@@ -1,12 +1,9 @@
 import React from 'react';
 import videojs from 'video.js';
-import 'videojs-youtube'; // Đăng ký tech YouTube cho Video.js
 
 interface MediaPlayerProps {
   streamUrl: string;
 }
-
-const YOUTUBE_REGEX = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
 
 export const MediaPlayer: React.FC<MediaPlayerProps> = ({ streamUrl }) => {
   const videoRef = React.useRef<HTMLDivElement>(null);
@@ -42,14 +39,10 @@ export const MediaPlayer: React.FC<MediaPlayerProps> = ({ streamUrl }) => {
   React.useEffect(() => {
     const player = playerRef.current;
     if (player && streamUrl) {
-        const isYoutube = YOUTUBE_REGEX.test(streamUrl);
         const isHls = streamUrl.includes('.m3u8');
         let source: { src: string; type?: string; };
 
-        if (isYoutube) {
-            // Video.js sẽ tự động sử dụng tech 'youtube' đã được import
-            source = { type: 'video/youtube', src: streamUrl };
-        } else if (isHls) {
+        if (isHls) {
             source = { type: 'application/x-mpegURL', src: streamUrl };
         } else {
             // Cho các định dạng khác như mp4

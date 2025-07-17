@@ -1,10 +1,6 @@
 import { StreamStatus, StreamDetails } from '../types';
 import Hls from 'hls.js';
 
-// YouTube URL Regex
-const YOUTUBE_REGEX = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/(watch\?v=|embed\/|v\/|.+\?v=)?([^"&?\/\s]{11})/;
-
-
 /**
  * Checks the status of a stream URL and attempts to extract technical details for HLS streams.
  * @param url The stream URL to check.
@@ -12,14 +8,6 @@ const YOUTUBE_REGEX = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/(watch\?
  */
 export const checkStreamStatus = (url: string): Promise<{ status: StreamStatus; details: StreamDetails | null }> => {
   return new Promise((resolve) => {
-    // Check for YouTube stream first
-    if (url && YOUTUBE_REGEX.test(url)) {
-      // We can't get deep stream details client-side, but we can validate the format
-      // and assume it's online. This provides a good UX without a backend/API key.
-      resolve({ status: StreamStatus.ONLINE, details: { resolution: 'YouTube', audio: undefined, fps: undefined } });
-      return;
-    }
-
     // Check for HLS stream and if hls.js is available
     if (url && url.includes('.m3u8') && typeof Hls !== 'undefined' && Hls.isSupported()) {
       const hls = new Hls({

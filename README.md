@@ -8,7 +8,7 @@ Một ứng dụng web mạnh mẽ để quản lý, kiểm tra và tổ chức 
 *   **Quản lý Kênh:** Thêm, sửa, xóa các kênh truyền hình một cách dễ dàng.
 *   **Import/Export M3U:** Nhập danh sách kênh từ file `.m3u` hoặc URL, và xuất danh sách của bạn ra file M3U tương thích.
 *   **Phân nhóm Kênh:** Tổ chức các kênh của bạn vào các nhóm tùy chỉnh (ví dụ: Thể thao, Tin tức, Giải trí).
-*   **Kiểm tra Trạng thái Stream:** Tự động kiểm tra xem một stream (HLS, YouTube) có đang hoạt động (Online) hay không (Offline).
+*   **Kiểm tra Trạng thái Stream:** Tự động kiểm tra xem một stream HLS có đang hoạt động (Online) hay không (Offline).
 *   **Tích hợp Lịch phát sóng (EPG):** Hỗ trợ hiển thị lịch phát sóng từ **nhiều nguồn URL XMLTV** cùng lúc. Dữ liệu sẽ được tự động tổng hợp.
 *   **Chế độ xem EPG trực tiếp:** Xem lịch phát sóng chi tiết của một kênh ngay bên cạnh trình phát video trực tiếp.
 *   **Giao diện Linh hoạt:** Chuyển đổi giữa chế độ xem Lưới (Grid) và Danh sách (List) để phù hợp với sở thích của bạn.
@@ -19,7 +19,7 @@ Một ứng dụng web mạnh mẽ để quản lý, kiểm tra và tổ chức 
 *   **Frontend:** [React](https://reactjs.org/) & [TypeScript](https://www.typescriptlang.org/)
 *   **Build Tool:** [Vite](https://vitejs.dev/)
 *   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-*   **Video Player:** [Video.js](https://videojs.com/) với sự hỗ trợ cho HLS và YouTube, cung cấp một trình phát mạnh mẽ và có thể tùy chỉnh.
+*   **Video Player:** [Video.js](https://videojs.com/) với sự hỗ trợ cho HLS, cung cấp một trình phát mạnh mẽ và có thể tùy chỉnh.
 *   **Dữ liệu:** `localStorage` của trình duyệt.
 
 ## 🛠️ Hướng dẫn sử dụng

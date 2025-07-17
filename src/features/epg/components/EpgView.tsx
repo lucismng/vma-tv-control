@@ -243,7 +243,7 @@ export const EpgView: React.FC<EpgViewProps> = ({ channels, epgData, epgLoadingS
                           <div className="border-t border-gray-700 pt-3 mt-4">
                             <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">THÔNG SỐ CỦA LUỒNG STREAM</h3>
                             <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-300">
-                                {streamDetails.resolution && streamDetails.resolution !== 'YouTube' && <span><b className="font-semibold text-gray-400">Độ phân giải:</b> {streamDetails.resolution}</span>}
+                                {streamDetails.resolution && <span><b className="font-semibold text-gray-400">Độ phân giải:</b> {streamDetails.resolution}</span>}
                                 {streamDetails.fps && <span><b className="font-semibold text-gray-400">FPS:</b> {streamDetails.fps}</span>}
                                 {streamDetails.audio && <span><b className="font-semibold text-gray-400">Audio:</b> {streamDetails.audio}</span>}
                             </div>
